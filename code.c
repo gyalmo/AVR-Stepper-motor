@@ -6,8 +6,8 @@
 #include "xstepper.h”
 Int main(void)
 {
- DDRC | = 0xFF;    // moter 
- DDRB &= ~BIT0;  // IR
+ DDRC | = 0xFF;                                     // motor
+ DDRB &= ~BIT0;                                       // IR sensor
  PORTB |= 0xFF;
  while(1)
 {
@@ -15,7 +15,7 @@ Int main(void)
     {
      sprintf("object detected");
      sprint(“open door now”);
-     PORTC=0x01;  // rotate motor to 80 degree to open door
+     PORTC=0x01;                                      // rotate motor to 80 degree to open door
      _delay_us(1450);
      PORTC = 0X00;
      _delay_us(2000);
@@ -24,7 +24,7 @@ Int main(void)
    {
     sprintf("no object detected");
     sprint(“ no need to open door ”);
-    PORTC = 0X00; // remain closed
+    PORTC = 0X00;                                     // remain closed
     _delay_us(1100);
    }
  }
