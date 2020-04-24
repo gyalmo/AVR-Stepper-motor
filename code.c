@@ -4,11 +4,11 @@
 #include <util/delay.h>
 #include <string.h>
 #include "xstepper.h”
-Int main(void)
+int main(void)
 {
- DDRC | = 0xFF;                                     // motor
+ DDRC| = 0xFF;                                     // motor
  DDRB &= ~BIT0;                                       // IR sensor
- PORTB |= 0xFF;
+ PORTB|= 0xFF;
  while(1)
 {
    if ((PINB&BIT0)==BIT0)
@@ -20,7 +20,7 @@ Int main(void)
      PORTC = 0X00;
      _delay_us(2000);
     }
-   Else
+   else
    {
     sprintf("no object detected");
     sprint(“ no need to open door ”);
@@ -28,5 +28,5 @@ Int main(void)
     _delay_us(1100);
    }
  }
-Return 0;
+return 0;
 }
